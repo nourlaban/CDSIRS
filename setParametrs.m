@@ -5,9 +5,9 @@ function [pathes Duties] = setParametrs()
 
              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Extraction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Duties.ExtractorsMethods    = {'HistogramMStd' 'Wavelets'             'DCTFeatures'...
-                                               'FFTFeatures'   'HistMStdW_Waveletes'  'Hist_Wav_DCT_FFT'   'GLCMFeatures'};
+                                               'FFTFeatures'   'HistMStdW_Waveletes'  'Hist_Wav_DCT_FFT'};
                                            
-                Duties.Statistics           = {'Stat2Bins' 'Stat4Bins'  'GLCMSTAT'};
+                Duties.Statistics           = {'Stat2Bins' 'Stat4Bins'};
                 
                 Duties.Sizes                = {[125 125]   [250 250] ...
                                                [500 500]   [1000 1000] ...
@@ -21,7 +21,8 @@ function [pathes Duties] = setParametrs()
                                                     'AssociativeRules'  'SVM'};
                 Duties.TrainXpercent        = {.2 .4 .6 .8 1};
                 
-                Duties.semantics            = {'cloud'}; 
+                Duties.semantics            = {'water', 'sanddunes','desert','vegtation' , 'rock'  ...
+                                              ,'urban'  'porophretic granite' 'Highly foliated metavolcanics'}; 
                 
                 
              

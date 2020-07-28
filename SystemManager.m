@@ -11,7 +11,7 @@ function SystemManager
         
         CurrentDuties.EM        = 5 ;
         
-        CurrentDuties.SM        = 1	    ;   CurrentDuties.SZ              = [3 4]  ;
+        CurrentDuties.SM    = 1	    ;   CurrentDuties.SZ              = 6  ;
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
         % retriever experiment
         % we have determine some parameters that affect the retrieval
@@ -23,7 +23,7 @@ function SystemManager
         % data which determine the degree purity of the resulting traing 
         % tiles  
                
-        CurrentDuties.RE        = 1             ;   CurrentDuties.TXP       = 2       ;
+        CurrentDuties.RE        = 1             ;   CurrentDuties.TXP       = 5       ;
         
         % detemining the location of of the name of the properties used by
         % corrent process using the shapefile data base  if 0 0 all is
@@ -43,21 +43,19 @@ function SystemManager
         retreive.XTrain     = 0.2   ;   retreive.round          = 2       ; 
               
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                                    %['cloud'}; 
-        CurrentDuties.Semantic      =    1 ;
-        s = 6;
-        for i =1:numel(s)
+                                    %['water', 'sandunes',  'desert', 'vegtation' , 'rock'  ,'urban'  'porophretic granite' 'Highly foliated metavolcanics'}; 
+        CurrentDuties.Semantic      =[   0         1           0         0            0      0            0                      0                      ];
+      
+                                    %[extractor   retriever   valuator ]
+        stages                      =[   1          0            0     ]  ; 
         
-                                    %[extractor fsigners  retriever   valuator  ]
-        stages                      =[   1         1      1            1       ]  ; 
-        
-%                                    satelitte ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10']
-                                    %[satellite   experiment   features signature retrieval  values ]
-        experiment                  =[   s(i)          1            1         1          1        1    ];
+%                                    satelitte [aster' 'spot' 'aster2'  'landsat']
+                                    %[satellite   experiment   features retrieval  values ]
+        experiment                  =[   4           3            1        1         1    ];
         
          OrderTransfomer( stages,experiment,CurrentDuties,retreive);
-         s(i)      
-        end
+               
+       
         
     
         
